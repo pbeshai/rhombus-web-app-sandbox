@@ -1,0 +1,227 @@
+/*-- Style for the Participant Grid app -----------------------------------------------*/
+@import "nib"
+
+.participant-grid
+	position relative
+	margin-bottom: 40px
+
+.participant
+	width 5.5em
+	height 5.5em
+	background-color #666
+	margin 2px
+	font-family 'helvetica neue', sans-serif
+	color #fff
+	position relative
+	display inline-block
+	transition 1s background-color
+	text-shadow: 2px 2px 0 #222, -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
+	background-size 5.5em
+	border: 1px solid #AAB
+	overflow hidden
+
+.participant.choice-a
+	background-color #03588C
+
+.participant.choice-b
+	background-color #1763A6
+
+.participant.choice-c
+	background-color #419CA6
+
+.participant.choice-d
+	background-color #54BF83
+
+.participant.choice-e
+	background-color #8DBF41
+
+.participant.participant-here
+	background-color rgb(51, 141, 23)
+
+.participant .id-text
+	font-size 1.3em
+	text-align center
+	margin-top: .2em
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+
+.participant.big-message .message-text
+	font-size 3.5em
+	position absolute
+	top 60%
+	line-height 1em
+	margin-top -.5em
+	left 0
+	right 0
+	text-align center
+
+.participant .medium-text.score
+	font-size 1.8em
+	top 50%
+
+.participant .medium-text
+	font-size 1.5em
+	position absolute
+	top 57%
+	line-height 1em
+	margin-top -.5em
+	left 0
+	right 0
+	text-align center
+
+.participant.player .choice-text
+	font-size 2.3em
+	top: 55%
+
+.participant .full-below-alias
+	font-size 1.5em
+	position absolute
+	top 24px
+	line-height 1em
+	left 0
+	right 0
+	text-align center
+
+.participant .message-text
+	font-size 1.6em
+	position absolute
+	top 58%
+	line-height 1em
+	margin-top -.5em
+	left 0
+	right 0
+	text-align center
+
+.participant.br-corner-message .message-text
+	top: auto
+	bottom: 2px
+	right: 5px
+	left: auto
+	margin-top: 0
+
+
+.participant.has-bottom .message-text
+	top: 53%
+
+.participant .bottom-text
+	position absolute
+	line-height 1em
+	left 0
+	right 0
+	text-align center
+	font-size: 1.1em;
+	bottom: 0;
+	background: rgba(255,255,255,.15);
+	border-radius: 0 0 4px 4px;
+	padding-bottom: 2px;
+
+
+.participant.played
+	background-color #333
+
+.participant.results .partner-result
+	position absolute
+	bottom 0
+	left 0
+	right 0
+	text-align center
+	background rgba(0,0,0,.2)
+
+.participant.results .partner-id
+	line-height 1.4em
+	font-size .9em
+	display inline
+	margin: 0 2px
+
+.participant.results .partner-score
+	font-size .9em
+	line-height: 1.4em
+	display inline
+
+
+
+bucket-border-width = 8px
+bucket-border-opacity = .7
+bucket-increment = 8%
+bucket(bucket-color, bucket-prefix = "")
+	for bucket in (0..7)
+		{bucket-prefix}.bucket-{bucket}
+			background-color: lighten(bucket-color, bucket-increment*bucket);
+			border: bucket-border-width solid rgba(lighten(bucket-color, bucket-increment*bucket), bucket-border-opacity);
+
+
+bucket(rgba(8, 37, 28, 0.85)); /* default bucket - green/blue */
+bucket(rgba(27, 12, 54, 0.85), ".bucket-purple") /* purple buckets */
+bucket(rgba(27, 48, 9, 0.85), ".bucket-green") /* purple buckets */
+bucket(rgba(7, 31, 48, .85), ".bucket-blue")
+bucket(rgba(58, 30, 5, 0.85), ".bucket-orange") //orange
+bucket(rgba(58, 12, 0, 0.85), ".bucket-red")
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: 1s background-color;
+}
+
+.overlay.fast-transition {
+	transition: .2s background-color;
+}
+
+.overlay.no-animate {
+	transition: none;
+}
+
+.overlay.transparent
+	background-color transparent;
+
+.overlay.choice-a, .overlay.green
+	background-color rgba(48, 241, 0, 0.5)
+
+.overlay.choice-b, .overlay.blue
+	background-color rgba(0, 112, 255, 0.5)
+
+.overlay.choice-c, .overlay.purple
+	background-color rgba(161, 0, 224, 0.5)
+
+.overlay.choice-d, .overlay.yellow
+	background-color rgba(224, 215, 0, 0.5)
+
+.overlay.choice-e, .overlay.red-orange
+	background-color rgba(224, 54, 0, 0.5)
+
+.overlay.dark-dim, .overlay.player.played
+	background-color: rgba(37, 16, 0, 0.7)
+
+.overlay.light-dim, .overlay.player.message
+	background-color: rgba(37, 16, 0, 0.4)
+
+.overlay.red
+	background-color: rgba(243, 32, 32, 0.7)
+
+.overlay.highlight
+	background-color: rgba(192, 215, 255, 0.7);
+	transition: none;
+
+.overlay.max-score
+	border: 3px solid rgb(245, 237, 57) !important; /* yellow border to draw attention */
+
+
+.overlay.cancel
+	background-color: rgba(255, 124, 124, .7);
+	transition: none;
+
+	&:before {
+		content: "\00d7";
+		display: block;
+		font-size: 7em;
+		margin-top: .22em;
+		text-align: center;
+		text-shadow: none;
+		color: rgba(150,50,50,.4);
+		font-weight: bold;
+	}

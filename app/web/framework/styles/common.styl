@@ -1,0 +1,172 @@
+/* group based style */
+.groups {
+  margin-bottom: 40px;
+}
+
+.group {
+  padding: 10px
+  border: 1px solid #ccc;
+}
+
+.group.inactive {
+	opacity: .5;
+}
+
+.group .participant-grid {
+  margin-bottom: 0
+}
+
+.group > header {
+  margin: -10px -10px 10px;
+  padding: 10px 20px;
+  background: #ddd;
+  position: relative;
+}
+
+.group > header h2 {
+  margin: 0;
+}
+
+.group > header h2 .suffix {
+  font-weight: 200;
+}
+
+
+.group > header .header-right {
+  font-size: 2.3em;
+  background: #eaeaea;
+  padding: 0 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  line-height: 1.7;
+  font-weight: 200;
+  color: #427a6b;
+  border: 4px solid #ddd;
+}
+
+.group-grid {
+  margin-bottom: 2em;
+}
+
+.group-stats {
+  font-size: 1.4em;
+}
+
+/* instruction clicker */
+clicker-width = 80px
+clicker-button-width = 40px
+clicker-button-height = 40px
+clicker-desc-width = 300px
+.instruction-description {
+  font-size: 1.4em;
+}
+.instruction-clicker {
+  background: #fcfcfc;
+  width: clicker-width;
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 30px 0;
+  margin-top: 10px;
+  box-shadow 2px 2px 1px rgba(0,0,0,.3);
+  margin-right: 220px; /*clicker-width + clicker-desc-width;  220px for stag hunt test */
+}
+
+.instruction-clicker .clicker-button-group {
+  margin-bottom: 10px;
+  position: relative;
+  min-height: clicker-button-height;
+}
+
+.instruction-clicker .clicker-button {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border: 1px solid #aaa;
+  border-right-width: 0;
+  position: absolute;
+  right: 0;
+  line-height: 40px;
+  text-align: center;
+  font-size: 2em;
+}
+
+.instruction-clicker .primary .clicker-button {
+  background-color: #006dcc;
+  color: #fff
+}
+
+.instruction-clicker .danger .clicker-button {
+  background-color: #BE302A;
+  color: #fff
+}
+
+.instruction-clicker .disabled .clicker-button {
+  background: #eee;
+  color: #aaa;
+  border-color: #ccc;
+}
+
+.instruction-clicker .clicker-button-description {
+  margin-left: clicker-width + 10px;
+  width: clicker-desc-width;
+  font-size: 1.9em;
+  padding-top: .4em;
+}
+
+h1 .round-header, h1 .round-label {
+  font-weight: 400;
+  color: #666;
+  margin-left: .5em;
+}
+
+
+.countdown {
+  position: fixed;
+  right: 2px;
+  top: 38px;
+  font-size: 4em;
+  text-shadow: #fff 2px 2px 10px, #fff -2px -2px 10px; /* white glow */
+}
+
+.countdown-highlight {
+  position: absolute;
+  color: rgb(206, 0, 0);
+  opacity: 0;
+}
+
+.legend
+  font-size: 1.3em;
+  line-height: 1.4em;
+  float: right;
+  margin-right: 30px;
+
+.legend > div
+  padding-left: 1.2em; /* for swatch */
+
+.legend > div > span /* swatch */
+  display: block;
+  width:  1em;
+  height: 1em;
+  border-radius: 4px;
+  float: left;
+  margin-left: -1.2em;
+  margin-top: 3px;
+
+
+.legend .blue > span {
+  background-color: #1f77b4
+}
+
+.legend .orange > span {
+  background-color: #ff7f0e;
+}
+
+.legend .green > span {
+  background-color: rgb(78,140,26);
+}
+
+.legend .red > span {
+  background-color rgb(206, 0, 0);
+}
